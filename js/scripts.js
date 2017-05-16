@@ -67,7 +67,18 @@ $(document).ready(function(){
             placeCard('dealer',dealersHand.length,dealersHand[dealersHand.length-1]);
             dealerTotal = calculateTotal(dealersHand,'dealer');
         }
-    })
+        checkWin()''
+    });
+
+    function checkWin(){
+        var playerTotal = calculateTotal(playersHand,'player');
+        var dealerTotal = calculateTotal(dealersHand,'dealer');
+        // if player > 21... player loses
+        // if dealer > 21... dealer loses
+        // if player > dealer, player wins
+        // if dealer > player, dealer wins
+        // else... tie.
+    }
 
     function calculateTotal(hand,who){
         // console.log(hand);
