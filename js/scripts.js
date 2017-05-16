@@ -40,7 +40,52 @@ $(document).ready(function(){
         placeCard('dealer',1,dealersHand[0])
         placeCard('player',2,playersHand[1])
         placeCard('dealer',2,dealersHand[1])
+
+        calculateTotal(dealersHand,'dealer');
+        calculateTotal(playersHand,'player');
     });
+
+    $('.hit-button').click(function(){
+        console.log("User clicked hit")
+        playersHand.push(theDeck.shift());
+        placeCard('player',playersHand.length,playersHand[playersHand.length-1]);
+        calculateTotal(playersHand,'player');
+    });
+
+    $('.stand-button').click(function(){
+        // console.log("User clicked on stand");
+        // What happens to the player when they stand?
+        // Nothing.
+        // Control goes to dealer.
+        // Rules of Blackjack for dealer:
+        // If I have < 17, must hit
+        // If I have > 17, I cannot hit
+        var dealerTotal = calculateTotal(dealersHand,'dealer');
+        // console.log(dealerTotal);
+        while(dealerTotal < 17){
+            dealersHand.push(theDeck.shift());
+            placeCard('dealer',dealersHand.length,dealersHand[dealersHand.length-1]);
+            dealerTotal = calculateTotal(dealersHand,'dealer');
+        }
+    })
+
+    function calculateTotal(hand,who){
+        // console.log(hand);
+        // init total at 0
+        var total = 0;
+        // create a temp value for this card's value
+        var thisCardValue = 0;
+        // Loop through the hand (array)
+        // Grab the number in the element and add the total
+        for(let i = 0; i <hand.length; i++){
+            thisCardValue = Number(hand[i].slice(0,-1));
+            total += thisCardValue;
+        }
+        console.log(total);
+        var classSelector = '.' + who + '-total-number';
+        $(classSelector).html(total);
+        return total;
+    }
 
     function placeCard(who, where, cardToPlace){
         var classSelector = '.' + who + '-cards .card-' + where;
