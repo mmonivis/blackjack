@@ -1,3 +1,11 @@
+.table-skew{
+    /* perspective: 30em; */
+}
+
+.table-name{
+    font-family: 'Six Caps', sans-serif;
+}
+
 .card img{
     max-height: 120px;
 }
@@ -5,9 +13,10 @@
 .the-table{
     background-color: #277714;
     border: 5px solid #dcdcdc;
-    border-radius: 10px;
+    border-radius: 10px 10px 50% 50%;
     margin-top:  50px;
     padding: 30px 0px;
+    /* transform: rotateX(45deg); */
 }
 
 .card{
@@ -16,4 +25,5 @@
     margin:  10px;
     width: 12.6%;
     float: left;
+    background-color: white;
 }

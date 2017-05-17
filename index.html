@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/scripts.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Six+Caps" rel="stylesheet">
 </head>
 <body>
 
@@ -18,18 +19,29 @@
 <!-- 4. Create an element for each card in each hand, maximum of 6 cards -->
 <!-- 5. Make a deal, hit and stand button -->
 
-<div class="container">
+<div class="container table-skew">
     <div class="row">
         <div class="col-sm-12 the-table">
 
             <div class="row">
+                <div class="col-sm-12 table-name text-center">BlackJack</div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 col-sm-offset-3 dealer-total text-center">
+                    <!-- This will hold the dealer's total (sum of all cards) -->
+                    Dealer total: <span class="dealer-total-number">0</span>
+                </div>
+                <!-- This will hold the player's total (sum of all cards) -->
+                <div class="col-sm-3 col-sm-offset-3 player-total">
+                    Player total: <span class="player-total-number">0</span>
+                </div>
+            </div>
+
+            <div class="row">
             <!-- This will hold dealer total and all six dealer cards -->
                 <div class="col-sm-12 dealer-hand-wrapper">
-                    <!-- This will hold the dealer's total (sum of all cards) -->
-                    <div class="col-sm-2 dealer-total">
-                        Dealer total: <span class="dealer-total-number">0</span>
-                    </div>
-                    <div class="col-sm-10 dealer-cards">
+                    <div class="col-sm-10 col-sm-offset-2 dealer-cards">
                         <!-- This is 10 cols wide, will divide it up -->
                         <div class="card card-1"></div>
                         <div class="card card-2"></div>
@@ -43,11 +55,7 @@
             <div class="row">
             <!-- This will hold player total and all six player cards -->
                 <div class="col-sm-12 player-hand-wrapper">
-                    <!-- This will hold the player's total (sum of all cards) -->
-                    <div class="col-sm-2 player-total">
-                        Player total: <span class="player-total-number">0</span>
-                    </div>
-                    <div class="col-sm-10 player-cards">
+                    <div class="col-sm-10 col-sm-offset-2 player-cards">
                         <!-- This is 10 cols wide, will divide it up -->
                         <div class="card card-1"></div>
                         <div class="card card-2"></div>
